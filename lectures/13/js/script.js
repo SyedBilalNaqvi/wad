@@ -19,6 +19,20 @@ var questions = [{
         "for",
         "none of the above"],
     correctAnswer : 1
+},{
+    question : "which programming language is basic for universtiy students",
+    choices : [ "java",
+        "php",
+        "fortran",
+        "C++"],
+    correctAnswer : 4
+},{
+    question : "which type of food i like most",
+    choices : [ "chinees",
+        "italian",
+        "pakistani",
+        "others"],
+    correctAnswer : 1
 }];
 
 var currentQuestion = 0;
@@ -27,11 +41,25 @@ var quizOver = false;
 displayCurrentQuestion();
 document.getElementById("quiz-message").style.display = 'none';
 function displayNext() {
-    /*Write your code here */
+    if (currentQuestion < questions.length) {
+        currentQuestion++;
+        document.getElementById("choice-list").innerHTML = '';
+        displayCurrentQuestion();
+    }
+    else {
+        documet.getElementById("next-btn").innerText = 'play again';
+        currentQuestion=0;
+        displayCurrentQuestion();
+    }
+    if(currentQuestion===0);
+    document.getElementById("next-btn").innerText='Next Question';
 }
 
 function displayCurrentQuestion() {
-    /*Write your code here */
+    document.getElementById("question").innerText=questions[currentQuestion].question;
+    for(var i=0;i<4;i++){
+        document.getElementById("choice-list").innerHTML +='<li><input type="radio">'+questions[currentQuestion].choices[i]+'</li>';
+    }
 }
 
 function resetQuiz() {
