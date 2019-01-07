@@ -97,7 +97,7 @@ require "server/functions.php";
 
         <div class="row">
             <div class="col">
-                Content
+                <?php display_contant(); ?>
             </div>
         </div>
     </article>
