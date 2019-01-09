@@ -21,23 +21,3 @@ function getBrands(){
         echo "<li><a class='nav-link'  href='#'>$brand_title</a></li>";
     }
 }
-
-function display_contant(){
-    global $con;
-    $getproductsQuery = "select * from products";
-    $getproductsResult = mysqli_query($con,$getproductsQuery);
-    while($row = mysqli_fetch_assoc($getproductsResult)){
-        $title = $row['pro_title'];
-        $cat = $row['pro_cat'];
-        $brand = $row['pro_brand'];
-        $price = $row['pro_price'];
-        $dis = $row['pro_des'];
-        $keyword = $row['pro_keyword'];
-        echo "<li>$title</li>";
-        echo "<li>$cat</li>";
-        echo "<li>$brand</li>";
-        echo "<li>$price</li>";
-        echo "<li>$dis</li>";
-        echo "<li>$keyword</li>";
-    }
-}
